@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>テストページ</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1>Javascriptテスト！</h1>
+  <div id="tokyo">
+    <img src="map1.jpg" id="tokyomap" alt="東京駅">
+    <div id="AP">
+      <img src="index.png" id="APIC" alt="AP" >
+    </div>
+    
+  </div>
+<script type="text/javascript">
+document.getElementById("tokyo").addEventListener( "click", function( event ) {
+	var clickX = event.pageX ;
+	var clickY = event.pageY ;
+
+	// 要素の位置を取得
+	var clientRect = this.getBoundingClientRect() ;
+	var positionX = clientRect.left + window.pageXOffset ;
+	var positionY = clientRect.top + window.pageYOffset ;
+
+	// 要素内におけるクリック位置を計算
+	var x = clickX - positionX ;
+	var y = clickY - positionY ;
+	
+	console.log(clickX);
+	console.log(clickY);
+} ) ;
+
+
+</script>
+</body>
+</html>
+
+
+
+
